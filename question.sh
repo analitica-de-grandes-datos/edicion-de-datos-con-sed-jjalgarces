@@ -40,5 +40,8 @@
 #  2014-09-01,A,3,100.4
 #
 #  >>> Escriba su codigo a partir de este punto <<<
-"acá arrancaría"
-#
+cat data.csv
+cat data.csv > output.csv
+
+sed -e 'y/abc/ABC/' -e 's/n/N/g' -e 's/\\\N/N/g' -e 's/N/\\\N/g' -e 's/;;/;N;/g' -e 's/N;\s/N;\\\N/g' -e 's/,/./g' -e 's/;/,/g' -e 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/g' output.csv
+
